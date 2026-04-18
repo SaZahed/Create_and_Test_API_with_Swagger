@@ -60,3 +60,19 @@ paths:
       responses:
         204:
           description: Deleted
+  /upload:
+      post:
+        summary: Upload an image
+        requestBody:
+          required: true
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  image:
+                    type: string
+                    format: binary
+        responses:
+          200:
+            description: Upload successful
